@@ -23,11 +23,11 @@ MODULE_NAME := $(notdir $(CURDIR))
 
 include $(HOME_TREE)/mak_def.inc
 
-CXXSRC += lidar.cpp FolloMe.cpp Map.cpp Compass.cpp Drive/Drive.cpp  PID/PID.cpp Blynk/src/utility/BlynkDebug.cpp Blynk/src/utility/BlynkHandlers.cpp Blynk/src/utility/BlynkTimer.cpp
-C_INCLUDES += -I$(CURDIR)/../../sdk/include -I$(CURDIR)/../../sdk/src -I$(CURDIR)/GPS/UltiGPS -I$(CURDIR)/Drive -I$(CURDIR)/PID -I$(CURDIR)/Blynk -I$(CURDIR)/Blynk/src -DLINUX
+CXXSRC += lidar.cpp run.cpp Map.cpp
+C_INCLUDES += -I$(CURDIR)/../../sdk/include -I$(CURDIR)/../../sdk/src 
 
 EXTRA_OBJ := 
-LD_LIBS += -lstdc++ -lpthread -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network -lm -lwiringPi -lgps -lncurses -lrt
+LD_LIBS += -lstdc++ -lpthread -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network -lm
 
 all: build_app
 
